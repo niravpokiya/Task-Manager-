@@ -34,3 +34,29 @@
 - 📅 **Timestamps**
   - Shows creation date
 
+## 🖼️ UI Previews
+
+<details>
+<summary>🔓 Register / Login</summary>
+
+![Register](https://github.com/user-attachments/assets/a4fda0f3-217d-4b6b-845c-c30ed75ad031)
+
+![Login](https://github.com/user-attachments/assets/8e4b5504-b97f-4503-ae48-921aa336f60c)
+
+
+</details>
+
+<details>
+<summary>📝 Task Dashboard</summary>
+
+![user-Tasks](https://github.com/user-attachments/assets/7ecfe97a-8e66-43b2-90c8-f0a979bfae61)
+
+</details>
+
+<details>
+<summary>📋 View Task Details</summary>
+
+![image](https://github.com/user-attachments/assets/137b559f-0b9c-443e-a98b-470471995fec)
+
+</details>
+ 
