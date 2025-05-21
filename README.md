@@ -59,4 +59,12 @@
 ![image](https://github.com/user-attachments/assets/137b559f-0b9c-443e-a98b-470471995fec)
 
 </details>
- 
+<details>
+  <summary>Add task</summary>
+  ![image](https://github.com/user-attachments/assets/0896009f-fbad-415f-9934-fe76cca69b0a)
+</details>
+
+<details>
+  <summary>Update task</summary>
+  ![image](https://github.com/user-attachments/assets/dc617b09-daa1-44bb-8f33-89fff3572941)
+</details>
