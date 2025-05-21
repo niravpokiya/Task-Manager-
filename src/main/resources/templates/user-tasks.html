@@ -1,0 +1,118 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>NotesCatcher - Your Tasks</title>
+  <link rel="stylesheet" th:href="@{/css/user-tasks.css}">
+</head>
+<body>
+
+<div class="container">
+  <h1 class="heading">NotesCatcher</h1>
+
+  <div class="welcome">
+    <h2 th:text="'Welcome, ' + ${user.username} + '!'">Welcome, User!</h2>
+  </div>
+
+  <!--  Modal-->
+  <div id="deleteModal" class="modal-overlay" style="display: none;">
+    <div class="modal">
+      <h3>Are you sure?</h3>
+      <p>This task will be permanently deleted.</p>
+      <div class="modal-actions">
+        <a id="confirmDeleteBtn" href="#" class="btn delete">Yes, Delete</a>
+        <button onclick="hideModal()" class="btn cancel" style="cursor:pointer;">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <!--Modal ends-->
+
+  <div th:if="${Response}" class="Response alert" >
+    <p th:text="${Response}"></p>
+    <p onclick="Reload()">X</p>
+  </div>
+  <div th:if="${success}" class="success alert" >
+    <p>
+      task updated successfully.
+    </p>
+    <p onclick="Reload()">X</p>
+  </div>
+
+  <div class="task-list">
+    <div class="task-card clickable-card" th:each="task : ${tasks}" th:attr="data-id=${task.id}" style="cursor: pointer;">
+      <div class="task-info">
+        <h3 th:text="${task.title}">Task Title</h3>
+        <p th:text="${#strings.length(task.description) > 30 ? #strings.substring(task.description, 0, 30) + '...' : task.description}">Task Description</p>
+
+        <p class="meta">
+          <span th:text="'Created: ' + ${#dates.format(task.createdTime, 'dd MMM yyyy HH:mm')}">Created date</span>
+        </p>
+      </div>
+
+      <div class="Status">
+    <span class="status-box status-completed"
+          th:if="${task.status.name == 'COMPLETED'}"
+          th:text="${task.status.name}"></span>
+
+        <span class="status-box status-pending"
+              th:if="${task.status.name == 'PENDING'}"
+              th:text="${task.status.name}"></span>
+
+        <span class="status-box status-inprogress"
+              th:if="${task.status.name == 'IN PROGRESS'}"
+              th:text="${task.status.name}"></span>
+      </div>
+
+      <div class="task-actions">
+        <a th:href="@{'/update-request?id=' + ${task.id}}"
+           class="btn update"
+           onclick="event.stopPropagation();">Update</a>
+
+        <a href="javascript:void(0)"
+           th:onclick="'showDeleteModal(' + '\'' + ${task.id} + '\'' + ')'"
+           class="btn delete"
+           onclick="event.stopPropagation();">Delete</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="add-task">
+    <a th:href="@{/add-task}" class="btn add">+ Add Task</a>
+  </div>
+
+  <a th:href="@{/logout}" class="btn logout">Log out</a>
+
+<!--  task modal-->
+
+
+
+
+
+
+
+</div>
+<script>
+  function showDeleteModal(taskId) {
+    const modal = document.getElementById('deleteModal');
+    const confirmBtn = document.getElementById('confirmDeleteBtn');
+    confirmBtn.href = '/delete-task?id=' + taskId;
+    modal.style.display = 'flex';
+  }
+
+  function hideModal() {
+    document.getElementById('deleteModal').style.display = 'none';
+  }
+
+  function Reload(){
+    location.reload();
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.clickable-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const id = card.getAttribute('data-id');
+        window.location.href = `/view-task?id=${id}`;
+      });
+    });
+  });
+</script>
+</body>
+</html>

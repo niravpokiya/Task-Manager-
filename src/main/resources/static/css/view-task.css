@@ -1,0 +1,52 @@
+body {
+
+    background: linear-gradient(135deg, #000000, #3f51b5);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2rem;
+    background: linear-gradient(90deg, #3f51b5, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: #2b2b4d;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.task-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #b3b3ff;
+}
+
+.task-label {
+    font-weight: bold;
+    margin-top: 15px;
+    color: #d1d1ff;
+}
+
+.task-desc, .task-status, .task-date {
+    background-color: #1e1e38;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 5px;
+    font-size: 0.95rem;
+    color: #f1f1f1;
+}

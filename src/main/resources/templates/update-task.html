@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Update Task - NotesCatcher</title>
+  <link rel="stylesheet" th:href="@{/css/add-task.css}">
+</head>
+<body>
+<div class="container">
+  <h1 class="heading">NotesCatcher</h1>
+
+  <div class="form-box">
+    <h2>Update Task</h2>
+    <form th:action="@{/update-task}" th:object="${taskRequest}" method="post">
+      <input type="hidden" name="id" th:value="${id}" />
+      <input type="text" th:field="*{title}" placeholder="Task Title" required />
+
+      <textarea th:field="*{description}" placeholder="Task Description" rows="4" required></textarea>
+
+      <select th:field="*{status}" required>
+        <option value="" disabled>Select Status</option>
+        <option th:each="s : ${statuses}"
+                th:value="${s.name}"
+                th:text="${s.name}">
+        </option>
+      </select>
+
+      <button type="submit">Update Task</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

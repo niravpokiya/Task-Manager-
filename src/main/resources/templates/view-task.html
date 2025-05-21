@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Task - NotesCatcher</title>
+    <link rel="stylesheet" th:href="@{/css/view-task.css}">
+</head>
+<body>
+<div class="container">
+    <h1 class="heading">NotesCatcher</h1>
+
+    <div class="card">
+        <h2 class="task-title" th:text="${task.title}">Task Title</h2>
+
+        <p class="task-label">Description:</p>
+        <p class="task-desc" th:text="${task.description}">Task Description</p>
+
+        <p class="task-label">Status:</p>
+        <p class="task-status" th:text="${task.status.name}">Status</p>
+
+        <p class="task-label">Created:</p>
+        <p class="task-date" th:text="${#dates.format(task.createdTime, 'dd MMM yyyy HH:mm')}">Created Date</p>
+
+        <p class="task-label">Last Updated:</p>
+        <p class="task-date" th:text="${#dates.format(task.updatedTime, 'dd MMM yyyy HH:mm')}">Updated Date</p>
+    </div>
+</div>
+</body>
+</html>
