@@ -1,7 +1,9 @@
 package com.Spring.TaskManager.Security;
 
+import com.Spring.TaskManager.EmailHandler.CustomLoginSuccessHandler;
 import com.Spring.TaskManager.Services.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -21,6 +23,10 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig {
+    @Autowired
+    private CustomLoginSuccessHandler customLoginSuccessHandler;
+
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -43,7 +49,7 @@ public class SecurityConfig {
                 )
                 .formLogin(form -> form
                         .loginPage("/Login")
-                        .defaultSuccessUrl("/user-tasks", true) // redirect on success
+                        .successHandler(customLoginSuccessHandler)  // redirect on success
                         .failureUrl("/Login?error=true")       // redirect on failure
                         .permitAll()
                 )

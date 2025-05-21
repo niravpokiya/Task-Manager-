@@ -2,6 +2,7 @@ package com.Spring.TaskManager.Controllers;
 
 import com.Spring.TaskManager.DTO.RegisterRequest;
 import com.Spring.TaskManager.DTO.TaskRequest;
+import com.Spring.TaskManager.EmailHandler.EmailSender;
 import com.Spring.TaskManager.Entities.Status;
 import com.Spring.TaskManager.Entities.Task;
 import com.Spring.TaskManager.Entities.User;
@@ -23,6 +24,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.Comparator;
 import java.util.List;
+import jakarta.mail.*;
 
 @Controller
 public class WebController {
@@ -39,10 +41,7 @@ public class WebController {
     public String Login() {
         return "Login";
     }
-    @PostMapping("/Login-success")
-    public String LoginSuccess(@ModelAttribute("user") User us) {
-        return "user-tasks";
-    }
+
     @PostMapping("/logout")
     public String logout(@AuthenticationPrincipal UserDetails userDetails, RedirectAttributes redirectAttributes) {
         return "redirect:/Login";
