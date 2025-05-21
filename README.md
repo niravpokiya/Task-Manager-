@@ -1,4 +1,4 @@
-# 📝 Spring Boot To-Do List API
+# 📝 Spring Boot MVC To-Do List API
 
 A **scalable REST API** for managing tasks in a To-Do list application, built using **Spring Boot** with **Spring Security**, **JPA**, and **MySQL**.
 
@@ -16,5 +16,5 @@ A **scalable REST API** for managing tasks in a To-Do list application, built us
 ## 🏗️ Tech Stack
 - **Backend:** Java, Spring Boot, Spring Security, Spring JPA  
 - **Database:** MySQL (Configured with Hibernate)  
-- **Frontend:** Thymeleaf, HTML, CSS, JavaScript  
+- **Frontend:** Thymeleaf, HTML, CSS, JavaScript
 - **API Testing:** Postman  
