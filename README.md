@@ -13,7 +13,7 @@
   - Spring Data JPA
 - 🔐 **BCrypt Password Encoding**
 - 🧠 **Thymeleaf Templating**
-- 💾 **MySQL / H2 Database**
+- 💾 **MySQL Database**
 - ✨ **Lombok**
 
 ---
