@@ -1,20 +1,36 @@
-# 📝 Spring Boot MVC To-Do List API
+# 📝 NotesCatcher
 
-A **scalable REST API** for managing tasks in a To-Do list application, built using **Spring Boot** with **Spring Security**, **JPA**, and **MySQL**.
-
----
-
-## 🚀 Features 
-✅ **CRUD Operations for Tasks** (Create, Read, Update, Delete)  
-✅ **Role-Based Access Control** (Users can only modify their own tasks)  
-✅ **MySQL Database Integration** with Hibernate & JPA  
-✅ **Thymeleaf Integration** (For Frontend)  
-✅ **Exception Handling & Validations**  
+**NotesCatcher** is a simple and secure Spring Boot web application to **register**, **login**, and **manage personal tasks**. It features a clean, responsive UI built with **Thymeleaf** and uses **Spring Security** for session-based authentication.
 
 ---
 
-## 🏗️ Tech Stack
-- **Backend:** Java, Spring Boot, Spring Security, Spring JPA  
-- **Database:** MySQL (Configured with Hibernate)  
-- **Frontend:** Thymeleaf, HTML, CSS, JavaScript
-- **API Testing:** Postman  
+## ⚙️ Tech Stack
+
+- ☕ **Java 17+**
+- 🌱 **Spring Boot**
+  - Spring Web
+  - Spring Security
+  - Spring Data JPA
+- 🔐 **BCrypt Password Encoding**
+- 🧠 **Thymeleaf Templating**
+- 💾 **MySQL / H2 Database**
+- ✨ **Lombok**
+
+---
+
+## ✨ Features
+
+- 🔐 **User Authentication**
+  - Register & Login
+  - Automatic login after registration
+- ✅ **Task CRUD**
+  - Add, Update, View, Delete Tasks
+- 🕵️ **Status Tracking**
+  - `PENDING`, `IN PROGRESS`, `COMPLETED`
+- 🎨 **Modern UI**
+  - Styled with responsive CSS
+- 🧾 **Modal-based Task Viewer**
+  - Click on a task to preview in a popup
+- 📅 **Timestamps**
+  - Shows creation date
+
