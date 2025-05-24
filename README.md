@@ -23,6 +23,7 @@
 - 🔐 **User Authentication**
   - Register & Login
   - Automatic login after registration
+  - Email notification after login
 - ✅ **Task CRUD**
   - Add, Update, View, Delete Tasks
 - 🕵️ **Status Tracking**
